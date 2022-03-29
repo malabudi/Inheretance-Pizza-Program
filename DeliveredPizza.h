@@ -1,5 +1,8 @@
 #include "Pizza.h"
 
+#ifndef DELIVEREDPIZZA_H
+#define DELIVEREDPIZZA_H
+
 class DeliveredPizza : public Pizza
 {
     private:
@@ -8,7 +11,9 @@ class DeliveredPizza : public Pizza
         std::string deliveryAdress;
 
     public:
-        DeliveredPizza(deliveryAdress);
+        DeliveredPizza(std::string pizzaSize, std::string crustType, std::vector<std::string> toppings, std::string deliveryAddress);
 
-        friend ostream& operator<<(ostream& output, const DeliveredPizza oneDelPizza);
+        friend std::ostream& operator<<(std::ostream& output, DeliveredPizza& oneDelPizza);
 };
+
+#endif
